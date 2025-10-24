@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://freeimagetopdfpro.blogspot.com/?m=1 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aggressive Image Compressor | Shrink Images to 0.25 Quality &amp; 1920px Max</title>
+    <meta name="description" content="Free aggressive image compressor: Reduce JPG, PNG, WebP file sizes up to 90% with 0.25 quality &amp; 1920px max resolution. Batch process multiple images instantly in your browser - no uploads, 100% private.">
+    <meta name="keywords" content="aggressive image compressor, compress images for web, reduce image file size, batch image compression, free image optimizer, JPG to WebP, PNG to WebP, 0.25 quality image, 1920px max resolution, privacy-focused image compressor, client-side image compression, online image compressor, compress images without uploading, image size reducer, image compressor for website, free image compressor without watermark">
+    <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 100 100&#39;&gt;&lt;text y=&#39;.9em&#39; font-size=&#39;90&#39;&gt;%F0%9F%96%BC%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Aggressive Image Compressor | Shrink Images to 0.25 Quality &amp; 1920px Max">
+    <meta property="og:description" content="Free browser-based tool: Compress JPG, PNG, WebP images up to 90% smaller with 0.25 quality &amp; 1920px max resolution. Batch processing - no uploads, 100% private.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com">
+
+    <!-- Tailwind CSS -->
+    <script src="./ImageCompressor_live_files/saved_resource"></script>
+
+    <!-- Inter Font -->
+    <link href="./ImageCompressor_live_files/css2" rel="stylesheet">
+
+    <style>
+        /* Base styles */
+        * {
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc;
+        }
+
+        /* Glassmorphism effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card-how {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 1.5rem;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        /* Gradient buttons */
+        .cta-gradient {
+            background-image: linear-gradient(45deg, #4f46e5 0%, #a855f7 100%);
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+        }
+
+        .cta-gradient:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.6);
+        }
+
+        .download-btn {
+            background-image: linear-gradient(90deg, #10b981 0%, #34d399 100%);
+            transition: transform 0.1s ease, box-shadow 0.3s ease;
+        }
+
+        .download-btn:hover {
+            box-shadow: 0 3px 10px rgba(16, 185, 129, 0.5);
+        }
+
+        .download-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Animated background */
+        .bg-shapes::before, .bg-shapes::after {
+            content: '';
+            position: absolute;
+            z-index: 0;
+            border-radius: 50%;
+            opacity: 0.6;
+            filter: blur(80px);
+            animation: move-shapes 15s infinite alternate;
+        }
+
+        .bg-shapes::before {
+            background-color: #c4b5fd;
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 5%;
+        }
+
+        .bg-shapes::after {
+            background-color: #fca5a5;
+            width: 400px;
+            height: 400px;
+            bottom: 15%;
+            right: 10%;
+            animation-delay: 3s;
+        }
+
+        @keyframes move-shapes {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(50px, -50px) scale(1.1); }
+        }
+
+        /* Scrollbar hiding */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* FIX: Reduce upload zone width to prevent overlapping with ad banners */
+        #upload-zone {
+            max-width: 800px; /* Reduced from full width */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* FIXED: Improved image card styling - REMOVED SHADOWS */
+        .result-card {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            overflow: visible;
+            width: 100% !important;
+            max-width: 100% !important;
+            padding: 1.5rem !important;
+            margin: 0 auto !important;
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.95) !important; /* Increased opacity for better visibility */
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            /* REMOVED: box-shadow: 0 15px 50px rgba(31, 38, 135, 0.4) !important; */
+            position: relative;
+            z-index: 1; /* Ensure cards are above background */
+        }
+
+        .file-name {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 100%;
+            margin-bottom: 0.5rem;
+        }
+
+        .file-info {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 0.5rem;
+            font-size: 0.75rem;
+        }
+
+        .file-info span {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        .file-info strong {
+            font-size: 0.875rem;
+        }
+
+        /* Fix horizontal scroll issue on mobile */
+        body, html {
+            overflow-x: hidden !important;
+            width: 100% !important;
+            position: relative;
+        }
+
+        /* FIX 1: Reduce main content width to avoid overlapping ads */
+        @media (min-width: 1024px) {
+            .main-grid-container {
+                grid-template-columns: 140px 1fr 140px; /* Reduced from 160px */
+                gap: 8px;
+            }
+        }
+
+        /* FIX 2: Remove appearing scrollbar on compression results tab */
+        #results-section,
+        #results-container,
+        #mobile-results-carousel {
+            overflow: hidden !important;
+            max-width: 100% !important;
+        }
+
+        .result-card img {
+            max-width: 100% !important;
+            height: auto !important;
+            display: block;
+            object-fit: contain; /* Keep aspect ratio */
+        }
+
+        /* FIXED: Reduced spacing between FAQ bubbles on mobile */
+        @media (max-width: 640px) {
+            #faqs .glass-card {
+                margin-bottom: 1rem !important; /* Reduced spacing between FAQ items */
+            }
+        }
+
+        /* Mobile-specific fixes */
+        @media (max-width: 640px) {
+            /* Reset body padding for mobile */
+            body.mobile-container {
+                padding: 0.5rem !important;
+            }
+
+            /* Main container constraints */
+            .main-grid-container {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            /* Content container */
+            .max-w-4xl {
+                width: 100% !important;
+                max-width: 100% !important;
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            /* Results section - critical fixes */
+            #results-section {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                overflow: hidden !important;
+            }
+
+            /* Mobile results carousel - completely fixed */
+            #mobile-results-carousel {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1.5rem; /* Increased gap for better visibility */
+                width: 100% !important;
+                max-width: 100% !important;
+                overflow: hidden !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                box-sizing: border-box;
+            }
+
+            /* Mobile cards - fixed width calculation */
+            .mobile-carousel-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                flex-shrink: 0;
+                margin: 0 !important;
+                padding: 0 !important;
+                box-sizing: border-box;
+            }
+
+            /* Result cards - proper mobile sizing - REMOVED SHADOWS */
+            .result-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 auto !important;
+                box-sizing: border-box;
+                padding: 1rem !important; /* Slightly reduced padding on mobile */
+                /* REMOVED: box-shadow: 0 15px 50px rgba(31, 38, 135, 0.4) !important; */
+            }
+
+            /* Ensure images don't overflow */
+            .result-card img {
+                max-width: 100% !important;
+                width: 100% !important;
+                height: auto !important;
+                display: block;
+                object-fit: contain;
+            }
+
+            /* Fix padding for glass cards on mobile */
+            .glass-card {
+                margin: 0 !important;
+                box-sizing: border-box;
+            }
+
+            /* File info adjustments */
+            .file-info {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+
+            .file-info span {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            /* Additional overflow protection */
+            #results-container,
+            .glass-card {
+                overflow: hidden !important;
+            }
+
+            /* Ensure no element can cause horizontal scroll */
+            * {
+                max-width: 100vw;
+            }
+        }
+
+        /* Tablet fixes */
+        @media (max-width: 1024px) {
+            .main-grid-container {
+                grid-template-columns: 1fr;
+                gap: 0;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+        }
+
+        .container-fixed {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Additional safety to prevent any overflow */
+        .overflow-guard {
+            overflow-x: hidden !important;
+            width: 100% !important;
+        }
+    </style>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Aggressive Image Compressor",
+        "url": "https://yourdomain.com",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any",
+        "description": "Free browser-based tool to aggressively compress JPG, PNG, and WebP images with 0.25 quality and 1920px max resolution for maximum file size reduction.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": "Image compression, Batch processing, Privacy protection, Format conversion"
+    }
+    </script>
+<link rel="me" href="https://www.blogger.com/profile/10208636867343226678">
+<meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
+<meta name="google-adsense-platform-domain" content="blogspot.com">
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.bottom-4{bottom:1rem}.right-4{right:1rem}.z-0{z-index:0}.z-10{z-index:10}.z-50{z-index:50}.z-\[100\]{z-index:100}.col-span-1{grid-column:span 1 / span 1}.mx-auto{margin-left:auto;margin-right:auto}.mb-10{margin-bottom:2.5rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-10{margin-top:2.5rem}.mt-12{margin-top:3rem}.mt-2{margin-top:0.5rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-16{height:4rem}.h-2\.5{height:0.625rem}.h-5{height:1.25rem}.h-8{height:2rem}.h-\[600px\]{height:600px}.min-h-screen{min-height:100vh}.w-16{width:4rem}.w-5{width:1.25rem}.w-8{width:2rem}.w-\[140px\]{width:140px}.w-full{width:100%}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-6xl{max-width:72rem}.max-w-lg{max-width:32rem}.max-w-screen-xl{max-width:1280px}.translate-y-4{--tw-translate-y:1rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.5rem * var(--tw-space-x-reverse));margin-left:calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.border-4{border-width:4px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-indigo-300\/50{border-color:rgb(165 180 252 / 0.5)}.bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.bg-indigo-100{--tw-bg-opacity:1;background-color:rgb(224 231 255 / var(--tw-bg-opacity, 1))}.bg-indigo-200{--tw-bg-opacity:1;background-color:rgb(199 210 254 / var(--tw-bg-opacity, 1))}.bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-opacity-75{--tw-bg-opacity:0.75}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-8{padding:2rem}.px-0{padding-left:0px;padding-right:0px}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-2{padding-bottom:0.5rem}.pt-10{padding-top:2.5rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-0.025em}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-indigo-500{--tw-text-opacity:1;color:rgb(99 102 241 / var(--tw-text-opacity, 1))}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.text-indigo-700{--tw-text-opacity:1;color:rgb(67 56 202 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-400{--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.opacity-100{opacity:1}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-150{transition-duration:150ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}.hover\:scale-\[1\.01\]:hover{--tw-scale-x:1.01;--tw-scale-y:1.01;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-\[1\.02\]:hover{--tw-scale-x:1.02;--tw-scale-y:1.02;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-indigo-500\/70:hover{border-color:rgb(99 102 241 / 0.7)}.hover\:bg-indigo-100\/50:hover{background-color:rgb(224 231 255 / 0.5)}.hover\:bg-indigo-700:hover{--tw-bg-opacity:1;background-color:rgb(67 56 202 / var(--tw-bg-opacity, 1))}.hover\:text-indigo-600:hover{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}@media (min-width: 640px){.sm\:block{display:block}.sm\:inline{display:inline}.sm\:grid{display:grid}.sm\:hidden{display:none}.sm\:h-6{height:1.5rem}.sm\:w-6{width:1.5rem}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.sm\:space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.sm\:space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.sm\:p-2{padding:0.5rem}.sm\:p-4{padding:1rem}.sm\:p-6{padding:1.5rem}.sm\:px-4{padding-left:1rem;padding-right:1rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:py-12{padding-top:3rem;padding-bottom:3rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-base{font-size:1rem;line-height:1.5rem}}@media (min-width: 768px){.md\:p-12{padding:3rem}.md\:p-8{padding:2rem}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-6xl{font-size:3.75rem;line-height:1}.md\:text-lg{font-size:1.125rem;line-height:1.75rem}}@media (min-width: 1024px){.lg\:flex{display:flex}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-\[140px_1fr_140px\]{grid-template-columns:140px 1fr 140px}.lg\:gap-8{gap:2rem}}@media (min-width: 1280px){.xl\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style></head>
+
+<body class="min-h-screen relative p-2 sm:p-4 md:p-8 mobile-container container-fixed overflow-guard">
+
+<!-- Animated Background -->
+<div class="bg-shapes absolute inset-0 z-0 pointer-events-none"></div>
+
+<!-- Main Grid Container -->
+<div class="relative z-10 max-w-screen-xl mx-auto main-grid-container grid lg:grid-cols-[140px_1fr_140px] lg:gap-8 overflow-guard">
+
+<!-- Left Ad Banner -->
+<div class="hidden lg:flex justify-center items-start pt-10">
+    <div class="w-[140px] h-[600px] bg-gray-200 glass-card flex items-center justify-center text-sm text-gray-600">
+        140x600 Ad (Left)
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="col-span-1 w-full overflow-guard">
+    <div class="max-w-4xl mx-auto overflow-guard">
+
+        <!-- Header -->
+        <header class="py-4 mb-10">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-8 h-8 text-indigo-600">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m6.75 12-3-3m0 0-3 3m3-3v8.25"></path>
+                    </svg>
+                    <span class="text-2xl md:text-3xl font-extrabold text-gray-900 tracking-tight">
+                        ImageCompressor
+                    </span>
+                </div>
+
+                <nav class="flex space-x-2 sm:space-x-4">
+                    <a href="https://freeimagetopdfpro.blogspot.com/?m=1#" id="privacy-link" class="hidden sm:inline text-sm sm:text-base text-gray-600 hover:text-indigo-600 font-medium transition duration-150 p-3 sm:p-2 rounded-lg hover:bg-indigo-100/50">Privacy</a>
+                    <a href="https://freeimagetopdfpro.blogspot.com/?m=1#" id="about-link" class="hidden sm:inline text-sm sm:text-base text-gray-600 hover:text-indigo-600 font-medium transition duration-150 p-3 sm:p-2 rounded-lg hover:bg-indigo-100/50">About</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <div class="text-center mb-16">
+            <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 tracking-tight">
+                <span class="text-indigo-600">Max Reduction</span> &amp; Auto-Resize Image Tool.
+            </h1>
+            <p class="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+                Shrink your images instantly with smart resizing and compression. Works with JPG, PNG, and WebP for fast, high-quality results.
+            </p>
+        </div>
+
+        <!-- Upload Zone -->
+        <section id="upload-zone" class="mb-16">
+            <h2 class="sr-only">Image Upload Area</h2>
+            <div id="drop-area" class="glass-card p-4 sm:p-6 md:p-12 text-center border-4 border-dashed border-indigo-300/50 hover:border-indigo-500/70 transition duration-300 transform hover:scale-[1.01] cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-16 w-16 text-indigo-500 mb-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2ZM18 20H6V4H13V9H18V20ZM12 11C14.7614 11 17 13.2386 17 16V17H15V16C15 14.3431 13.6569 13 12 13C10.3431 13 9 14.3431 9 16V17H7V16C7 13.2386 9.23858 11 12 11ZM12 18C13.1046 18 14 18.8954 14 20H10C10 18.8954 10.8954 18 12 18Z" opacity=".5" fill="currentColor"></path><path d="M12 11C14.7614 11 17 13.2386 17 16V17H15V16C15 14.3431 13.6569 13 12 13C10.3431 13 9 14.3431 9 16V17H7V16C7 13.2386 9.23858 11 12 11Z" fill="currentColor"></path>
+                </svg>
+                <p class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2">Drag &amp; Drop Images Here</p>
+                <p class="text-sm sm:text-base text-gray-500 mb-4">or click to browse. (JPG, PNG, WebP)</p>
+                <input type="file" id="file-input" multiple="" accept="image/jpeg, image/png, image/webp" class="hidden">
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results-section" class="mb-16 hidden overflow-guard">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Compression Results (<span id="file-count">0</span> Files)</h2>
+
+            <!-- Desktop/Tablet Grid -->
+            <div id="results-container" class="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+                <!-- Preview Cards will be inserted here -->
+            </div>
+
+            <!-- Mobile Vertical Layout - COMPLETELY FIXED -->
+            <div id="mobile-results-carousel" class="sm:hidden mt-6 w-full overflow-guard">
+                <!-- Cards will be inserted here for mobile view -->
+            </div>
+
+            <div id="progress-indicator" class="mt-8 hidden">
+                <p class="text-lg font-medium text-indigo-600 mb-2">Processing Images...</p>
+                <div class="w-full bg-indigo-200 rounded-full h-2.5">
+                    <div id="progress-bar" class="bg-indigo-600 h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ratings Section -->
+        <section id="ratings" class="py-8 sm:py-12 text-center">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Loved by Users</h2>
+            <p class="text-gray-600 mb-8">Average rating based on hundreds of users</p>
+
+            <!-- Stars -->
+            <div class="flex justify-center items-center space-x-2 mb-4">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09L5.5 12.545 1 8.91l6.062-.545L10 2l2.938 6.365 6.062.545-4.5 3.636 1.378 5.545z"></path></svg>
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09L5.5 12.545 1 8.91l6.062-.545L10 2l2.938 6.365 6.062.545-4.5 3.636 1.378 5.545z"></path></svg>
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09L5.5 12.545 1 8.91l6.062-.545L10 2l2.938 6.365 6.062.545-4.5 3.636 1.378 5.545z"></path></svg>
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09L5.5 12.545 1 8.91l6.062-.545L10 2l2.938 6.365 6.062.545-4.5 3.636 1.378 5.545z"></path></svg>
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09L5.5 12.545 1 8.91l6.062-.545L10 2l2.938 6.365 6.062.545-4.5 3.636 1.378 5.545z"></path></svg>
+            </div>
+            <p class="text-gray-700 font-medium">Rated <span class="font-bold text-indigo-600">4.8 / 5</span> by over 300 users</p>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="w-full bg-indigo-100 rounded-3xl py-8 px-4 sm:py-12 sm:px-6">
+            <div class="max-w-6xl mx-auto text-center px-0 sm:px-4">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">How It Works</h2>
+                <div class="grid sm:grid-cols-3 gap-8">
+                    <div class="glass-card-how p-4 sm:p-6 flex flex-col items-center text-center hover:scale-[1.02] transition duration-300">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-indigo-600 text-2xl font-bold">1</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Upload</h3>
+                        <p class="text-gray-600 text-sm">Drag &amp; drop your images or browse your device to upload them quickly.</p>
+                    </div>
+                    <div class="glass-card-how p-4 sm:p-6 flex flex-col items-center text-center hover:scale-[1.02] transition duration-300">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-indigo-600 text-2xl font-bold">2</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Compress</h3>
+                        <p class="text-gray-600 text-sm">Our tool automatically resizes and compresses your images for maximum reduction.</p>
+                    </div>
+                    <div class="glass-card-how p-4 sm:p-6 flex flex-col items-center text-center hover:scale-[1.02] transition duration-300">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-indigo-600 text-2xl font-bold">3</span>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Download</h3>
+                        <p class="text-gray-600 text-sm">Download the smaller images instantly and use them anywhere.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQs Section -->
+        <section id="faqs" class="py-8 sm:py-12">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+
+                <div class="space-y-4 sm:space-y-4"> <!-- Reduced spacing between FAQ items on mobile -->
+                    <div class="glass-card p-4 cursor-pointer transition duration-300 hover:shadow-lg">
+                        <h3 class="text-gray-800 font-semibold flex justify-between items-center">
+                            <span>Is my privacy safe?</span>
+                            <svg class="w-5 h-5 text-indigo-500 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(0deg);"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </h3>
+                        <p class="text-gray-600 mt-2 transition-all duration-500 hidden">Yes! All images are processed <strong>in your browser only.</strong> Nothing is uploaded to any server. Your privacy is guaranteed.</p>
+                    </div>
+                    <div class="glass-card p-4 cursor-pointer transition duration-300 hover:shadow-lg">
+                        <h3 class="text-gray-800 font-semibold flex justify-between items-center">
+                            <span>What image formats are supported?</span>
+                            <svg class="w-5 h-5 text-indigo-500 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(0deg);"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </h3>
+                        <p class="text-gray-600 mt-2 transition-all duration-500 hidden"><strong>JPG, PNG,</strong> and <strong>WebP</strong> are supported. PNGs are automatically converted to the WebP format for superior lossy compression results.</p>
+                    </div>
+                    <div class="glass-card p-4 cursor-pointer transition duration-300 hover:shadow-lg">
+                        <h3 class="text-gray-800 font-semibold flex justify-between items-center">
+                            <span>Can I compress multiple images at once?</span>
+                            <svg class="w-5 h-5 text-indigo-500 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(0deg);"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </h3>
+                        <p class="text-gray-600 mt-2 transition-all duration-500 hidden">Yes! You can upload multiple images at once, and our batch processing will handle them efficiently. <strong>We support up to 500 files per upload.</strong></p>
+                    </div>                  
+                </div>
+            </div>
+        </section>
+
+        <!-- Mobile Footer -->
+        <section class="sm:hidden mt-12 text-center px-4 py-6 border-t border-gray-300">
+            <h3 class="text-lg font-semibold text-gray-700 mb-3">Maximum Reduction Strategy</h3>
+            <p class="text-sm text-gray-600 mb-4">
+                Our tool makes your images much smaller while keeping them sharp. JPEG and WebP files are compressed, PNG files are converted to WebP for big savings, and the final image is always guaranteed to be smaller than the original.
+            </p>
+        </section>
+
+        <!-- SEO Section -->
+        <section id="about-seo" class="hidden sm:block py-10 text-center text-gray-500 border-t mt-10">
+            <h3 class="text-xl font-semibold text-gray-700 mb-4">Maximum Reduction Strategy</h3>
+            <p class="max-w-4xl mx-auto text-sm">
+                Our tool makes your images much smaller while keeping them sharp. JPEG and WebP files are compressed, PNG files are converted to WebP for big savings, and the final image is always guaranteed to be smaller than the original.
+            </p>
+        </section>
+    </div>
+</div> <!-- End Main Content -->
+
+<!-- Right Ad Banner -->
+<div class="hidden lg:flex justify-center items-start pt-10">
+    <div class="w-[140px] h-[600px] bg-gray-200 glass-card flex items-center justify-center text-sm text-gray-600">
+        140x600 Ad (Right)
+    </div>
+</div>
+
+</div> <!-- End Main Grid Container -->
+
+<!-- Toast Notifications -->
+<div id="toast-container" class="fixed bottom-4 right-4 z-50 space-y-2">
+    <!-- Toasts will be appended here -->
+</div>
+
+<!-- Message Box Modal -->
+<div id="message-box-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 z-[100] flex items-center justify-center p-4 transition-opacity duration-300 opacity-0 pointer-events-none">
+    <div id="message-content" class="glass-card bg-white p-8 w-full max-w-lg transform transition-all duration-300 translate-y-4">
+        <h3 id="message-title" class="text-2xl font-bold text-indigo-700 mb-4">Our Privacy Promise</h3>
+        <p id="message-body" class="text-gray-700 mb-6 leading-relaxed">We respect your privacy. All images are processed directly in your browser, so nothing is uploaded or stored online. Your files stay safe and private.</p>
+        <div class="flex justify-end">
+            <button onclick="hideMessageBox()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-full transition duration-150">
+                Close
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Hidden File Input -->
+<input type="file" id="hidden-file-input" multiple="" accept="image/jpeg, image/png, image/webp" class="hidden">
+
+<script>
+// Global elements
+const dropArea = document.getElementById('drop-area');
+const fileInput = document.getElementById('file-input');
+const hiddenFileInput = document.getElementById('hidden-file-input');
+const resultsSection = document.getElementById('results-section');
+const resultsContainer = document.getElementById('results-container');
+const mobileResultsCarousel = document.getElementById('mobile-results-carousel');
+const fileCountSpan = document.getElementById('file-count');
+const progressBar = document.getElementById('progress-bar');
+const progressIndicator = document.getElementById('progress-indicator');
+const toastContainer = document.getElementById('toast-container');
+
+// Modal elements
+const messageBoxModal = document.getElementById('message-box-modal');
+const messageTitle = document.getElementById('message-title');
+const messageBody = document.getElementById('message-body');
+const messageContent = document.getElementById('message-content');
+
+// Header link elements
+const privacyLink = document.getElementById('privacy-link');
+const aboutLink = document.getElementById('about-link');
+
+// --- Message Box Functions ---
+
+/**
+* Shows a custom message box/modal with the given title and content.
+* @param {string} title
+* @param {string} content
+*/
+const showMessageBox = (title, content) => {
+    messageTitle.textContent = title;
+    messageBody.textContent = content;
+
+    // Show modal and enable transitions
+    messageBoxModal.classList.remove('pointer-events-none', 'opacity-0');
+    messageBoxModal.classList.add('opacity-100');
+
+    // Animate content in
+    setTimeout(() => {
+        messageContent.classList.remove('translate-y-4');
+    }, 50);
+};
+
+/**
+* Hides the custom message box/modal.
+*/
+const hideMessageBox = () => {
+    // Animate content out
+    messageContent.classList.add('translate-y-4');
+
+    // Hide modal and disable interaction
+    setTimeout(() => {
+        messageBoxModal.classList.remove('opacity-100');
+        messageBoxModal.classList.add('opacity-0', 'pointer-events-none');
+    }, 300);
+};
+
+// Close modal when clicking outside the content area
+messageBoxModal.addEventListener('click', (e) => {
+    if (e.target === messageBoxModal) {
+        hideMessageBox();
+    }
+});
+
+// --- Utility Functions ---
+
+/**
+* Converts bytes to a human-readable string (e.g., 1024 -> 1.0 KB).
+* @param {number} bytes
+* @returns {string}
+*/
+const formatBytes = (bytes) => {
+    if (bytes === 0) return '0 Bytes';
+    const k = 1024;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+};
+
+/**
+* Creates and shows a temporary toast notification.
+* @param {string} message
+* @param {string} type ('success' or 'error')
+*/
+const showToast = (message, type = 'success') => {
+    const colors = {
+        success: { bg: 'bg-green-500', icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
+        error: { bg: 'bg-red-500', icon: 'M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z' }
+    };
+
+    const toast = document.createElement('div');
+    toast.className = `${colors[type].bg} text-white px-4 py-3 rounded-lg shadow-xl flex items-center transition duration-300 transform translate-x-full opacity-0`;
+    toast.innerHTML = `
+    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${colors[type].icon}"></path>
+    </svg>
+    <span>${message}</span>
+    `;
+
+    toastContainer.appendChild(toast);
+
+    // Animate in
+    setTimeout(() => {
+        toast.style.transform = 'translate-x-0';
+        toast.style.opacity = '1';
+    }, 10);
+
+    // Animate out and remove
+    setTimeout(() => {
+        toast.style.transform = 'translate-x-full';
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 300);
+    }, 5000);
+};
+
+// --- Core Image Compression Logic ---
+
+/**
+* Compresses a single file using resize and aggressive quality settings.
+* @param {File} file
+* @returns {Promise<{compressedDataUrl: string, compressedBlob: Blob, compressedSize: number}>}
+*/
+const compressImage = (file) => {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            const originalDataUrl = event.target.result;
+            const originalSize = file.size;
+
+            const img = new Image();
+            img.onload = () => {
+                const canvas = document.createElement('canvas');
+
+                // Resize Logic (Max 1920px)
+                const MAX_DIMENSION = 1920;
+                let { width, height } = img;
+
+                if (width > MAX_DIMENSION || height > MAX_DIMENSION) {
+                    const ratio = Math.min(MAX_DIMENSION / width, MAX_DIMENSION / height);
+                    canvas.width = width * ratio;
+                    canvas.height = height * ratio;
+                } else {
+                    canvas.width = width;
+                    canvas.height = height;
+                }
+
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+                let mimeType, quality;
+
+                // Aggressive Quality/Format Logic (0.25)
+                if (file.type === 'image/jpeg') {
+                    mimeType = 'image/jpeg';
+                    quality = 0.25;
+                } else if (file.type === 'image/png') {
+                    mimeType = 'image/webp';
+                    quality = 0.25;
+                } else if (file.type === 'image/webp') {
+                    mimeType = 'image/webp';
+                    quality = 0.25;
+                } else {
+                    return reject(new Error('Unsupported file format.'));
+                }
+
+                // Get compressed data URL
+                const compressedDataUrl = canvas.toDataURL(mimeType, quality);
+
+                // Convert compressed data URL to Blob
+                const parts = compressedDataUrl.split(';base64,');
+                const contentType = parts[0].split(':')[1];
+                const raw = window.atob(parts[1]);
+                const rawLength = raw.length;
+                const uInt8Array = new Uint8Array(rawLength);
+                for (let i = 0; i < rawLength; ++i) {
+                    uInt8Array[i] = raw.charCodeAt(i);
+                }
+                const compressedBlob = new Blob([uInt8Array], { type: contentType });
+                const compressedSize = compressedBlob.size;
+
+                // Size Guarantee Fallback
+                if (compressedSize >= originalSize) {
+                    resolve({
+                        compressedDataUrl: originalDataUrl,
+                        compressedBlob: file,
+                        compressedSize: originalSize
+                    });
+                } else {
+                    resolve({ compressedDataUrl, compressedBlob, compressedSize });
+                }
+
+            };
+            img.onerror = () => reject(new Error('Failed to load image.'));
+            img.src = originalDataUrl;
+        };
+        reader.onerror = () => reject(new Error('Failed to read file.'));
+        reader.readAsDataURL(file);
+    });
+};
+
+// --- UI Generation & Download ---
+
+/**
+* Creates a result card for a compressed image.
+* @param {File} originalFile
+* @param {string} finalDataUrl
+* @param {number} finalSize
+* @param {Blob} finalBlob
+* @returns {HTMLElement}
+*/
+const createResultCard = (originalFile, finalDataUrl, finalSize, finalBlob) => {
+    const originalSize = originalFile.size;
+    const originalFormat = originalFile.name.split('.').pop();
+
+    let reductionText = '';
+    let reductionClass = '';
+    let fileName = originalFile.name.replace(/\.[^/.]+$/, "");
+
+    const isWebP = finalBlob.type.includes('webp');
+    const finalExtension = isWebP ? 'webp' : originalFormat;
+
+    const reductionPercentage = (finalSize / originalSize) * 100;
+
+    if (finalSize < originalSize) {
+        const reduction = 100 - reductionPercentage;
+        reductionText = `-${reduction.toFixed(1)}% Reduction`;
+        reductionClass = 'bg-green-100 text-green-700';
+        fileName = `${fileName}_compressed.${finalExtension}`;
+    } else {
+        reductionText = `0% Reduction (Used Original)`;
+        reductionClass = 'bg-yellow-100 text-yellow-700';
+        fileName = originalFile.name;
+    }
+
+    const downloadUrl = URL.createObjectURL(finalBlob);
+
+    const card = document.createElement('div');
+    card.className = 'result-card glass-card p-6 transition duration-300 hover:scale-[1.03]';
+    card.innerHTML = `
+    <img src="${finalDataUrl}" alt="Compressed Preview" class="w-full h-24 sm:h-32 object-contain rounded-lg mb-4 lazyload">
+
+    <p class="file-name text-sm font-semibold text-gray-800">${originalFile.name}</p>
+
+    <div class="file-info">
+        <span>
+            <span class="text-xs text-gray-500">Original</span>
+            <strong class="text-gray-700">${formatBytes(originalSize)}</strong>
+        </span>
+        <span>
+            <span class="text-xs text-gray-500">Final</span>
+            <strong class="text-indigo-800">${formatBytes(finalSize)}</strong>
+        </span>
+    </div>
+
+    <div class="w-full h-3 bg-indigo-200 rounded-full flex file-size-bar mb-4">
+        <div class="bg-indigo-600 h-3 rounded-full transition-all duration-500" style="width: ${Math.min(reductionPercentage, 100)}%;"></div>
+    </div>
+
+    <div class="mb-4 text-sm font-bold p-1 px-3 rounded-full ${reductionClass}">
+        ${reductionText}
+    </div>
+
+    <button data-url="${downloadUrl}" data-filename="${fileName}" class="download-btn text-white font-semibold py-2 px-6 rounded-full w-full transition duration-150 shadow-md mt-auto">
+        Download
+    </button>
+    `;
+
+    // Attach download listener
+    const downloadButton = card.querySelector('.download-btn');
+    downloadButton.addEventListener('click', (e) => {
+        const url = e.currentTarget.getAttribute('data-url');
+        const name = e.currentTarget.getAttribute('data-filename');
+
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = name;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        showToast(`'${name}' downloaded successfully!`);
+        setTimeout(() => URL.revokeObjectURL(url), 100);
+    });
+
+    return card;
+};
+
+// --- Event Handlers ---
+
+// Event listeners for Privacy and About links
+privacyLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    showMessageBox(
+        'Our Privacy Promise',
+        'We respect your privacy. All images are processed directly in your browser, so nothing is uploaded or stored online. Your files stay safe and private.'
+    );
+});
+
+aboutLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    showMessageBox(
+        'About ImageCompressor',
+        'Shrink your images instantly with smart resizing and compression. Works with JPG, PNG, and WebP for fast, high-quality results.'
+    );
+});
+
+/**
+* Initiates the compression process for all selected files.
+* @param {FileList} files
+*/
+const processFiles = async (files) => {
+    // Clear previous results
+    resultsContainer.innerHTML = '';
+    mobileResultsCarousel.innerHTML = '';
+    resultsSection.classList.add('hidden');
+
+    // Filter unsupported files
+    const supportedFiles = Array.from(files).filter(file =>
+        file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'image/webp'
+    );
+
+    if (supportedFiles.length === 0) {
+        if (files.length > 0) {
+            showToast('None of the selected files are supported (JPG, PNG, WebP).', 'error');
+        }
+        return;
+    }
+
+    resultsSection.classList.remove('hidden');
+    progressIndicator.classList.remove('hidden');
+    fileCountSpan.textContent = supportedFiles.length;
+
+    let completedCount = 0;
+
+    for (const file of supportedFiles) {
+        try {
+            const { compressedDataUrl, compressedBlob, compressedSize } = await compressImage(file);
+
+            // Create card once
+            const desktopCard = createResultCard(file, compressedDataUrl, compressedSize, compressedBlob);
+
+            // For mobile, use the same card but with full width
+            const mobileCard = desktopCard.cloneNode(true);
+            mobileCard.classList.add('mobile-carousel-card', 'w-full');
+
+            // Append to respective containers
+            resultsContainer.appendChild(desktopCard);
+            mobileResultsCarousel.appendChild(mobileCard);
+
+            completedCount++;
+            progressBar.style.width = `${(completedCount / supportedFiles.length) * 100}%`;
+        } catch (error) {
+            console.error('Compression failed for file:', file.name, error);
+            showToast(`Compression failed for ${file.name}. Error: ${error.message}`, 'error');
+            completedCount++;
+            progressBar.style.width = `${(completedCount / supportedFiles.length) * 100}%`;
+        }
+    }
+
+    progressIndicator.classList.add('hidden');
+    showToast(`Batch compression complete! ${completedCount} images ready for download.`);
+
+    // Scroll to results
+    resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
+
+// --- Setup Listeners (File Upload) ---
+
+// Click-to-Upload Listener
+dropArea.addEventListener('click', () => {
+    hiddenFileInput.click();
+});
+
+// File Input Change Listener
+hiddenFileInput.addEventListener('change', (e) => {
+    if (e.target.files.length > 0) {
+        processFiles(e.target.files);
+    }
+});
+
+// Drag & Drop Listeners
+['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    dropArea.addEventListener(eventName, preventDefaults, false);
+});
+
+function preventDefaults (e) {
+    e.preventDefault();
+    e.stopPropagation();
+}
+
+// Highlight effect on dragover
+['dragenter', 'dragover'].forEach(eventName => {
+    dropArea.addEventListener(eventName, () => {
+        dropArea.classList.add('border-indigo-600/90', 'scale-[1.02]');
+        dropArea.classList.remove('border-indigo-300/50', 'scale-[1.00]');
+    }, false);
+});
+
+// Remove highlight on dragleave/drop
+['dragleave', 'drop'].forEach(eventName => {
+    dropArea.addEventListener(eventName, () => {
+        dropArea.classList.remove('border-indigo-600/90', 'scale-[1.02]');
+        dropArea.classList.add('border-indigo-300/50', 'scale-[1.00]');
+    }, false);
+});
+
+// Handle dropped files
+dropArea.addEventListener('drop', (e) => {
+    const dt = e.dataTransfer;
+    const files = dt.files;
+    processFiles(files);
+}, false);
+
+// --- FAQ Toggle Logic ---
+document.querySelectorAll('#faqs .glass-card').forEach(card => {
+    card.addEventListener('click', () => {
+        const answer = card.querySelector('p');
+        const icon = card.querySelector('svg');
+
+        answer.classList.toggle('hidden');
+
+        if (answer.classList.contains('hidden')) {
+            icon.style.transform = 'rotate(0deg)';
+        } else {
+            icon.style.transform = 'rotate(180deg)';
+        }
+    });
+});
+</script>
+
+
+</body></html>
