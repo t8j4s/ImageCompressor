@@ -1,1 +1,0 @@
-// JavaScript content from <script> will go here
