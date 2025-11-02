@@ -1,0 +1,50 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://imagecompressor.live/sitemap.xml
+
+# Allow all essential pages
+Allow: /index.html
+Allow: /about.html
+Allow: /privacy.html
+Allow: /blogs.html
+Allow: /blogs/
+
+# Allow CSS and JS resources
+Allow: /*.css$
+Allow: /*.js$
+
+# Disallow unnecessary directories (if any exist)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+
+# Crawl delay (optional - adjust based on server capacity)
+Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Block AI training crawlers (optional)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /

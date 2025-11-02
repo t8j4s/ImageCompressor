@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <meta name="description" content="Free, open-source, client-side image compression tool. No servers, no tracking, no limits.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='%231E40AF'><path stroke-linecap='round' stroke-linejoin='round' d='M19.5 3h-15A1.5 1.5 0 003 4.5v15A1.5 1.5 0 004.5 21h7.5v-6a3 3 0 013-3h6v-7.5A1.5 1.5 0 0019.5 3z' /></svg>">
+    <meta property="og:title" content="About Us">
+    <meta property="og:description" content="Free, open-source, client-side image compression. No servers, no tracking, no limits.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://imagecompressor.live/about.html">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Space Grotesk Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+        html,body{width:100%;min-height:100vh;overflow-x:hidden;font-family:'Space Grotesk',sans-serif;background:linear-gradient(135deg,#e6f0fa 0%,#f0f7ff 100%);position:relative}
+        .glass-card{background:rgba(255,255,255,.3);backdrop-filter:blur(25px);border-radius:24px;border:1px solid rgba(255,255,255,.35);transition:transform .5s cubic-bezier(.4,0,.2,1),box-shadow .5s ease}
+        .glass-card:hover{transform:translateY(-10px);box-shadow:0 20px 48px rgba(0,0,0,.15)}
+        .action-btn{background:linear-gradient(45deg,#1e40af,#3b82f6);color:#fff;padding:14px 28px;border-radius:14px;font-weight:600;position:relative;overflow:hidden;transition:all .4s cubic-bezier(.4,0,.2,1)}
+        .action-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);transition:left .5s ease}
+        .action-btn:hover::before{left:100%}
+        .action-btn:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(30,64,175,.5)}
+        .nav-link{position:relative;transition:color .4s ease;font-weight:500}
+        .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:3px;background:linear-gradient(90deg,#1e40af,#3b82f6);transition:width .4s ease}
+        .nav-link:hover::after{width:100%}
+        .nav-link.active{color:#1e40af;font-weight:600}
+        .nav-link.active::after{width:100%}
+        .feature-card{background:rgba(255,255,255,.3);backdrop-filter:blur(20px);border-radius:24px;border:1px solid rgba(255,255,255,.35);transition:transform .6s cubic-bezier(.4,0,.2,1),box-shadow .6s ease;position:relative;overflow:hidden}
+        .feature-card:hover{transform:translateY(-12px) scale(1.04);box-shadow:0 20px 48px rgba(0,0,0,.2)}
+        .feature-icon{width:3.5rem;height:3.5rem;color:#1e40af;transition:transform .6s ease;border-radius:50%;background:rgba(255,255,255,.2);padding:.5rem}
+        .feature-card:hover .feature-icon{transform:rotate(360deg) scale(1.2)}
+        @media (max-width:640px){
+            body{padding:.75rem}
+            .max-w-7xl{max-width:100%;padding-left:.5rem;padding-right:.5rem}
+            .action-btn{padding:8px 16px;font-size:.85rem}
+            .feature-card{padding:1.25rem}
+        }
+    </style>
+</head>
+<body class="min-h-screen relative p-4 sm:p-6 md:p-8">
+<div class="relative z-10 max-w-7xl mx-auto">
+
+    <!-- Header -->
+    <header class="flex items-center justify-between py-4">
+        <div class="flex items-center space-x-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#1e40af" class="w-10 h-10">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 3h-15A1.5 1.5 0 003 4.5v15A1.5 1.5 0 004.5 21h7.5v-6a3 3 0 013-3h6v-7.5A1.5 1.5 0 0019.5 3z"/>
+            </svg>
+            <a href="/" class="text-2xl md:text-3xl font-bold text-gray-900">ImageCompressor.live</a>
+        </div>
+        <!-- Desktop Nav: Home, Privacy, About (active), Blogs -->
+        <nav class="hidden md:flex space-x-8">
+            <a href="/" class="nav-link text-gray-700 hover:text-blue-600">Home</a>
+            <a href="/privacy.html" class="nav-link text-gray-700 hover:text-blue-600">Privacy</a>
+            <a href="/about.html" class="nav-link active">About</a>
+            <a href="/blogs.html" class="nav-link text-gray-700 hover:text-blue-600">Blogs</a>
+        </nav>
+    </header>
+
+    <!-- About Content -->
+    <section class="py-12">
+        <div class="glass-card p-8 md:p-12 max-w-4xl mx-auto">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
+                About
+            </h1>
+            <p class="text-gray-700 leading-relaxed mb-8">
+                A <strong>free, open-source, client-side</strong> image optimization tool built for speed, quality, and privacy.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="feature-card p-6 text-center">
+                    <svg class="feature-icon mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Lightning Fast</h3>
+                    <p class="text-sm text-gray-600">Uses Canvas API + binary search for instant results.</p>
+                </div>
+                <div class="feature-card p-6 text-center">
+                    <svg class="feature-icon mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Zero Server</h3>
+                    <p class="text-sm text-gray-600">No uploads. No logs. No data retention.</p>
+                </div>
+                <div class="feature-card p-6 text-center">
+                    <svg class="feature-icon mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Open Source</h3>
+                    <p class="text-sm text-gray-600">Fully auditable on GitHub.</p>
+                </div>
+                <div class="feature-card p-6 text-center">
+                    <svg class="feature-icon mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Free Forever</h3>
+                    <p class="text-sm text-gray-600">No limits. No paywalls.</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="https://github.com/t8j4s/imagecompressor" target="_blank" class="action-btn inline-block">
+                    View on GitHub
+                </a>
+            </div>
+
+            <p class="mt-8 text-sm text-gray-500 text-center">
+                Built with love
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 border-t border-gray-200">
+        <p class="text-sm text-gray-600 mb-2">© 2025 ImageCompressor.live</p>
+        <!-- Mobile Nav: Home, Privacy, About (active), Blogs -->
+        <nav class="md:hidden flex justify-center gap-6">
+            <a href="/" class="text-gray-700 hover:text-blue-600 text-sm">Home</a>
+            <a href="/privacy.html" class="text-gray-700 hover:text-blue-600 text-sm">Privacy</a>
+            <a href="/about.html" class="text-blue-600 font-medium text-sm">About</a>
+            <a href="/blogs.html" class="text-gray-700 hover:text-blue-600 text-sm">Blogs</a>
+        </nav>
+    </footer>
+</div>
+</body>
+</html>
