@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compress Images to 50KB, 100KB, or 200KB</title>
+    <meta name="description" content="Exact settings and tools to compress images to 50KB, 100KB, or 200KB — perfect for forms, emails, social media, and fast websites.">
+    <meta name="keywords" content="compress image to 100kb, reduce to 50kb, image size limit, file upload optimization, compress jpeg to 200kb">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='%231E40AF'><path stroke-linecap='round' stroke-linejoin='round' d='M19.5 3h-15A1.5 1.5 0 003 4.5v15A1.5 1.5 0 004.5 21h7.5v-6a3 3 0 013-3h6v-7.5A1.5 1.5 0 0019.5 3z' /></svg>">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://imagecompressor.live/blogs/compress-images-to-50kb-100kb-or-200kb">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Compress Images to 50KB, 100KB, or 200KB">
+    <meta property="og:description" content="Hit exact file size targets with one click. Step-by-step guide for forms, emails, and uploads.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://imagecompressor.live/blogs/compress-images-to-50kb-100kb-or-200kb">
+    <meta property="og:image" content="https://images.pexels.com/photos/326311/pexels-photo-326311.jpeg?auto=compress&cs=tinysrgb&w=1200">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Compress Images to 50KB, 100KB, or 200KB",
+      "image": "https://images.pexels.com/photos/326311/pexels-photo-326311.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "datePublished": "2025-10-26",
+      "dateModified": "2025-10-26",
+      "author": {
+        "@type": "Organization",
+        "name": "ImageCompressor.live"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ImageCompressor.live",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://imagecompressor.live/logo.svg"
+        }
+      },
+      "description": "Exact settings and tools to compress images to 50KB, 100KB, or 200KB — perfect for forms, emails, social media, and fast websites.",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://imagecompressor.live/blogs/compress-images-to-50kb-100kb-or-200kb"
+      }
+    }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Space Grotesk Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Preload Font -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+        html,body{width:100%;min-height:100vh;overflow-x:hidden;font-family:'Space Grotesk',sans-serif;background:linear-gradient(135deg,#e6f0fa 0%,#f0f7ff 100%);position:relative}
+        .glass-card{background:rgba(255,255,255,.3);backdrop-filter:blur(25px);border-radius:24px;border:1px solid rgba(255,255,255,.35);transition:transform .5s cubic-bezier(.4,0,.2,1),box-shadow .5s ease}
+        .glass-card:hover{transform:translateY(-10px);box-shadow:0 20px 48px rgba(0,0,0,.15)}
+        .action-btn{background:linear-gradient(45deg,#1e40af,#3b82f6);color:#fff;padding:14px 28px;border-radius:14px;font-weight:600;position:relative;overflow:hidden;transition:all .4s cubic-bezier(.4,0,.2,1)}
+        .action-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);transition:left .5s ease}
+        .action-btn:hover::before{left:100%}
+        .action-btn:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(30,64,175,.5)}
+        .nav-link{position:relative;transition:color .4s ease;font-weight:500}
+        .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:3px;background:linear-gradient(90deg,#1e40af,#3b82f6);transition:width .4s ease}
+        .nav-link:hover::after{width:100%}
+        .nav-link.active{color:#1e40af;font-weight:600}
+        .nav-link.active::after{width:100%}
+
+        /* Responsive Prose */
+        .prose{font-size:1.1rem;line-height:1.8;color:#374151}
+        .prose h2{font-size:1.75rem;font-weight:700;color:#1f2937;margin:2rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid #dbeafe}
+        .prose h3{font-size:1.4rem;font-weight:600;color:#1e40af;margin:1.5rem 0 .75rem}
+        .prose p,.prose li{margin-bottom:1rem}
+        .prose ul,.prose ol{margin-left:1.5rem;margin-bottom:1.5rem}
+        .prose li{margin-bottom:.5rem}
+
+        /* Table Responsive Wrapper */
+        .table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 2rem 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,.05);
+            background: #fff;
+        }
+        .prose table{width:100%;min-width:600px;border-collapse:collapse;font-size:1rem}
+        .prose th,.prose td{border:1px solid #e5e7eb;padding:.75rem;text-align:left;vertical-align:top}
+        .prose th{background:#f3f4f6;font-weight:600}
+
+        .size-badge{display:inline-block;padding:6px 14px;border-radius:20px;font-weight:600;font-size:.9rem;margin-right:.5rem}
+        .size-50{background:#ef4444;color:white}
+        .size-100{background:#f59e0b;color:white}
+        .size-200{background:#10b981;color:white}
+
+        .before-after{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0}
+        .before-after img{width:100%;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.1);height:200px;object-fit:cover}
+        .before-after p{font-weight:600;text-align:center;margin-top:.5rem}
+
+        /* Mobile Overrides */
+        @media (max-width:640px){
+            body{padding:.75rem}
+            .max-w-7xl{max-width:100%;padding-left:.5rem;padding-right:.5rem}
+            .prose{font-size:0.95rem;line-height:1.7}
+            .prose h1{font-size:1.9rem !important}
+            .prose h2{font-size:1.5rem;margin:1.5rem 0 .75rem}
+            .prose h3{font-size:1.25rem;margin:1.25rem 0 .5rem}
+            .prose p,.prose li{margin-bottom:0.75rem;font-size:0.95rem}
+            .prose table{font-size:0.85rem}
+            .prose th,.prose td{padding:.5rem}
+            .size-badge{font-size:0.8rem;padding:4px 10px}
+            .before-after{grid-template-columns:1fr;gap:1.25rem}
+            .before-after img{height:160px;border-radius:10px}
+            .action-btn{padding:10px 20px;font-size:0.9rem}
+            footer { padding: 2rem 0 3rem; }
+        }
+        @media (max-width:480px){
+            .prose{font-size:0.9rem}
+            .prose table{font-size:0.8rem;min-width:500px}
+            .prose th,.prose td{padding:.4rem}
+            .action-btn{padding:8px 16px;font-size:0.85rem}
+            .before-after img{height:140px}
+        }
+    </style>
+</head>
+<body class="min-h-screen relative p-4 sm:p-6 md:p-8">
+<div class="relative z-10 max-w-7xl mx-auto">
+
+    <!-- Header – EXACTLY matches blogs.html -->
+    <header class="flex items-center justify-between py-4">
+        <div class="flex items-center space-x-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#1e40af" class="w-10 h-10">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 3h-15A1.5 1.5 0 003 4.5v15A1.5 1.5 0 004.5 21h7.5v-6a3 3 0 013-3h6v-7.5A1.5 1.5 0 0019.5 3z"/>
+            </svg>
+            <a href="/" class="text-2xl md:text-3xl font-bold text-gray-900" aria-label="ImageCompressor.live Home">ImageCompressor.live</a>
+        </div>
+
+        <!-- Desktop Navigation – Hidden on mobile -->
+        <nav class="hidden md:flex space-x-8">
+            <a href="/" class="nav-link text-gray-700 hover:text-blue-600">Home</a>
+            <a href="/privacy.html" class="nav-link text-gray-700 hover:text-blue-600">Privacy</a>
+            <a href="/about.html" class="nav-link text-gray-700 hover:text-blue-600">About</a>
+            <a href="/blogs.html" class="nav-link active">Blogs</a>
+        </nav>
+    </header>
+
+    <!-- Back to Blog -->
+    <a href="/blogs.html" class="inline-block mb-6 text-blue-600 hover:underline font-medium">
+        ← Back to All Blogs
+    </a>
+
+    <!-- Article Header -->
+    <header class="mb-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Compress Images to 50KB, 100KB, or 200KB
+        </h1>
+        <p class="text-gray-600 text-lg">
+            Published on October 26, 2025 • 8 min read
+        </p>
+    </header>
+
+    <!-- Hero Image -->
+    <img 
+        src="https://images.pexels.com/photos/326311/pexels-photo-326311.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+        alt="Compress image to 100KB example - before and after" 
+        class="w-full rounded-2xl mb-8 shadow-lg object-cover"
+        loading="lazy"
+    >
+
+    <!-- Article Content -->
+    <article class="glass-card p-8 md:p-12 prose prose-lg max-w-none text-gray-700">
+        <p>
+            You've been there: "<em>File must be under 100KB</em>" — and your 2MB photo won't upload. Or you need a 50KB avatar for a form. <strong>Stop guessing</strong>. Here's how to hit <strong>50KB, 100KB, or 200KB exactly</strong> — every time.
+        </p>
+
+        <h2>Why Target Sizes Matter</h2>
+        <p>
+            Many platforms enforce strict limits:
+        </p>
+        <ul>
+            <li><strong>50KB:</strong> Avatars, mobile forms, LinkedIn profile photos</li>
+            <li><strong>100KB:</strong> Email attachments, job applications, web thumbnails</li>
+            <li><strong>200KB:</strong> Blog posts, social media, product listings</li>
+        </ul>
+
+        <h2>Target Size Guide (1920px Photo)</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Target Size</th>
+                        <th>Use Case</th>
+                        <th>Slider % (ImageCompressor)</th>
+                        <th>Resize Width</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="size-badge size-50">50KB</span></td>
+                        <td>Avatars, forms</td>
+                        <td><strong>10–20%</strong></td>
+                        <td>400–600px</td>
+                    </tr>
+                    <tr>
+                        <td><span class="size-badge size-100">100KB</span></td>
+                        <td>Email, uploads</td>
+                        <td><strong>25–35%</strong></td>
+                        <td>800–1000px</td>
+                    </tr>
+                    <tr>
+                        <td><span class="size-badge size-200">200KB</span></td>
+                        <td>Blog, social</td>
+                        <td><strong>40–50%</strong></td>
+                        <td>1200–1600px</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Step-by-Step Method (Works 100%)</h2>
+        <ol>
+            <li><strong>Go to <a href="/" class="text-blue-600 font-semibold hover:underline">ImageCompressor.live</a></strong></li>
+            <li>Upload your image</li>
+            <li>Move the slider to the % above</li>
+            <li>Download — done!</li>
+        </ol>
+
+        <div class="bg-yellow-50 border border-yellow-200 rounded-2xl p-6 my-8">
+            <p class="font-semibold text-yellow-900">
+                Pro Tip: <strong>Resize first, then compress.</strong> A 600px image at 20% = 50KB. A 4000px image at 20% = 800KB.
+            </p>
+        </div>
+
+        <h2>Real Example: 2.1 MB → 98 KB</h2>
+        <div class="before-after">
+            <div class="text-center">
+                <img 
+                    src="https://images.pexels.com/photos/326311/pexels-photo-326311.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" 
+                    alt="Original 2.1 MB image" 
+                    class="rounded-lg mb-2 shadow"
+                    loading="lazy"
+                >
+                <p class="font-semibold">Original: <span class="text-red-600">2.1 MB</span></p>
+                <p class="text-sm">4000×3000px</p>
+            </div>
+            <div class="text-center">
+                <img 
+                    src="https://images.pexels.com/photos/326311/pexels-photo-326311.jpeg?auto=compress&cs=tinysrgb&w=600&q=60" 
+                    alt="Compressed to 98 KB" 
+                    class="rounded-lg mb-2 shadow"
+                    loading="lazy"
+                >
+                <p class="font-semibold text-green-600">Target: 98 KB</p>
+                <p class="text-sm">800px wide, 30% quality</p>
+            </div>
+        </div>
+
+        <h2>Best Settings by Target</h2>
+
+        <h3><span class="size-badge size-50">50KB</span> Ultra-Small</h3>
+        <ul>
+            <li><strong>Resize to:</strong> 500px width</li>
+            <li><strong>Slider:</strong> 15%</li>
+            <li><strong>Format:</strong> WebP (lossy)</li>
+            <li><strong>Result:</strong> ~45–55KB</li>
+        </ul>
+
+        <h3><span class="size-badge size-100">100KB</span> Standard</h3>
+        <ul>
+            <li><strong>Resize to:</strong> 900px width</li>
+            <li><strong>Slider:</strong> 30%</li>
+            <li><strong>Format:</strong> WebP or JPEG</li>
+            <li><strong>Result:</strong> ~90–110KB</li>
+        </ul>
+
+        <h3><span class="size-badge size-200">200KB</span> High Quality</h3>
+        <ul>
+            <li><strong>Resize to:</strong> 1400px width</li>
+            <li><strong>Slider:</strong> 45%</li>
+            <li><strong>Format:</strong> WebP</li>
+            <li><strong>Result:</strong> ~180–210KB</li>
+        </ul>
+
+        <h2>Tools That Support Target Sizes</h2>
+        <ul>
+            <li><a href="/" class="text-blue-600 font-semibold hover:underline">ImageCompressor.live</a> → Percentage slider (easiest)</li>
+            <li><strong>Squoosh</strong> → Manual quality control</li>
+            <li><strong>Photopea</strong> → Export for Web (Legacy)</li>
+        </ul>
+
+        <h2>Common Mistakes to Avoid</h2>
+        <ul>
+            <li><strong>Re-compressing</strong> → Adds artifacts</li>
+            <li><strong>Wrong dimensions</strong> → File stays too big</li>
+            <li><strong>Using PNG for photos</strong> → 5x larger</li>
+        </ul>
+
+        <div class="bg-green-50 border border-green-200 rounded-2xl p-6 my-8">
+            <p class="font-semibold text-green-900">
+                Golden Rule: <strong>Resize → WebP → Compress.</strong> Never skip resizing.
+            </p>
+        </div>
+
+        <h2>Conclusion: Hit Any Size in 10 Seconds</h2>
+        <p>
+            No more "file too large" errors. With the right tool and settings, you can <strong>compress any image to 50KB, 100KB, or 200KB</strong> — without guesswork.
+        </p>
+        <p>
+            Use <a href="/" class="text-blue-600 font-semibold hover:underline">ImageCompressor.live</a> — drag, slide, download. It's free, instant, and works on any device.
+        </p>
+    </article>
+
+    <!-- CTA -->
+    <div class="mt-12 pt-8 border-t border-gray-200 text-center">
+        <a href="/" class="action-btn text-lg">
+            Try the #1 Free Compressor Now
+        </a>
+    </div>
+
+    <!-- Footer – Matches blogs.html exactly -->
+    <footer class="text-center py-8 border-t border-gray-200 mt-12">
+        <a href="/blogs.html" class="text-blue-600 hover:underline text-sm block mb-3">
+            ← Back to All Blog Posts
+        </a>
+        <p class="text-sm text-gray-600 mb-2">© 2025 ImageCompressor.live</p>
+        
+        <!-- Mobile Nav – Hidden on desktop -->
+        <nav class="md:hidden flex justify-center gap-6 text-sm">
+            <a href="/" class="text-gray-700 hover:text-blue-600">Home</a>
+            <a href="/privacy.html" class="text-gray-700 hover:text-blue-600">Privacy</a>
+            <a href="/about.html" class="text-gray-700 hover:text-blue-600">About</a>
+            <a href="/blogs.html" class="text-blue-600 font-medium">Blogs</a>
+        </nav>
+    </footer>
+</div>
+
+<!-- Scroll hint for tables -->
+<script>
+    document.querySelectorAll('.table-wrapper').forEach(wrapper => {
+        if (wrapper.scrollWidth > wrapper.clientWidth + 5) {
+            wrapper.style.border = '1px solid #e5e7eb';
+            wrapper.style.padding = '4px';
+            wrapper.style.borderRadius = '12px';
+        }
+    });
+</script>
+</body>
+</html>

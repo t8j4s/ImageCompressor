@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Up Your Site with Image Compression</title>
+    <meta name="description" content="Cut load time by 3+ seconds, boost Core Web Vitals, and increase conversions with 80% smaller images. Full guide with tools and case studies.">
+    <meta name="keywords" content="site speed optimization, image compression for web, core web vitals, page speed, reduce load time, image cdn">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='%231E40AF'><path stroke-linecap='round' stroke-linejoin='round' d='M19.5 3h-15A1.5 1.5 0 003 4.5v15A1.5 1.5 0 004.5 21h7.5v-6a3 3 0 013-3h6v-7.5A1.5 1.5 0 0019.5 3z' /></svg>">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://imagecompressor.live/blogs/speed-up-your-site-with-image-compression">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Speed Up Your Site with Image Compression">
+    <meta property="og:description" content="Cut load time by 3+ seconds and boost Core Web Vitals with 80% smaller images.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://imagecompressor.live/blogs/speed-up-your-site-with-image-compression">
+    <meta property="og:image" content="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1200">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Speed Up Your Site with Image Compression",
+      "image": "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "datePublished": "2025-10-27",
+      "dateModified": "2025-10-27",
+      "author": { "@type": "Organization", "name": "ImageCompressor.live" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ImageCompressor.live",
+        "logo": { "@type": "ImageObject", "url": "https://imagecompressor.live/logo.svg" }
+      },
+      "description": "Cut load time by 3+ seconds, boost Core Web Vitals, and increase conversions with 80% smaller images. Full guide with tools and case studies.",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://imagecompressor.live/blogs/speed-up-your-site-with-image-compression" }
+    }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Space Grotesk Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Preload Font -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+        html,body{width:100%;min-height:100vh;overflow-x:hidden;font-family:'Space Grotesk',sans-serif;background:linear-gradient(135deg,#e6f0fa 0%,#f0f7ff 100%);position:relative}
+        .glass-card{background:rgba(255,255,255,.3);backdrop-filter:blur(25px);border-radius:24px;border:1px solid rgba(255,255,255,.35);transition:transform .5s cubic-bezier(.4,0,.2,1),box-shadow .5s ease}
+        .glass-card:hover{transform:translateY(-10px);box-shadow:0 20px 48px rgba(0,0,0,.15)}
+        .action-btn{background:linear-gradient(45deg,#1e40af,#3b82f6);color:#fff;padding:14px 28px;border-radius:14px;font-weight:600;position:relative;overflow:hidden;transition:all .4s cubic-bezier(.4,0,.2,1)}
+        .action-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);transition:left .5s ease}
+        .action-btn:hover::before{left:100%}
+        .action-btn:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(30,64,175,.5)}
+        .nav-link{position:relative;transition:color .4s ease;font-weight:500}
+        .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:3px;background:linear-gradient(90deg,#1e40af,#3b82f6);transition:width .4s ease}
+        .nav-link:hover::after{width:100%}
+        .nav-link.active{color:#1e40af;font-weight:600}
+        .nav-link.active::after{width:100%}
+
+        /* Responsive Prose */
+        .prose{font-size:1.1rem;line-height:1.8;color:#374151}
+        .prose h2{font-size:1.75rem;font-weight:700;color:#1f2937;margin:2rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid #dbeafe}
+        .prose h3{font-size:1.4rem;font-weight:600;color:#1e40af;margin:1.5rem 0 .75rem}
+        .prose p,.prose li{margin-bottom:1rem}
+        .prose ul,.prose ol{margin-left:1.5rem;margin-bottom:1.5rem}
+        .prose li{margin-bottom:.5rem}
+
+        /* Table Responsive Wrapper */
+        .table-wrapper{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.05);background:#fff}
+        .prose table{width:100%;min-width:600px;border-collapse:collapse;font-size:1rem}
+        .prose th,.prose td{border:1px solid #e5e7eb;padding:.75rem;text-align:left;vertical-align:top}
+        .prose th{background:#f3f4f6;font-weight:600}
+
+        .metric-good{color:#10b981}
+        .metric-poor{color:#ef4444}
+        .before-after{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0}
+        .before-after img{width:100%;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.1)}
+        .before-after p{font-weight:600;text-align:center;margin-top:.5rem}
+
+        /* Mobile Overrides */
+        @media (max-width:640px){
+            body{padding:.75rem}
+            .max-w-7xl{max-width:100%;padding-left:.5rem;padding-right:.5rem}
+            .prose{font-size:0.95rem;line-height:1.7}
+            .prose h1{font-size:1.9rem !important}
+            .prose h2{font-size:1.5rem;margin:1.5rem 0 .75rem}
+            .prose h3{font-size:1.25rem;margin:1.25rem 0 .5rem}
+            .prose p,.prose li{margin-bottom:0.75rem;font-size:0.95rem}
+            .prose table{font-size:0.85rem}
+            .prose th,.prose td{padding:.5rem}
+            .before-after{grid-template-columns:1fr}
+            .before-after img{border-radius:10px}
+            .action-btn{padding:10px 20px;font-size:0.9rem}
+            footer { padding: 2rem 0 3rem; }
+        }
+        @media (max-width:480px){
+            .prose{font-size:0.9rem}
+            .prose table{font-size:0.8rem;min-width:500px}
+            .prose th,.prose td{padding:.4rem}
+            .action-btn{padding:8px 16px;font-size:0.85rem}
+        }
+    </style>
+</head>
+<body class="min-h-screen relative p-4 sm:p-6 md:p-8">
+<div class="relative z-10 max-w-7xl mx-auto">
+
+    <!-- Header -->
+    <header class="flex items-center justify-between py-4">
+        <div class="flex items-center space-x-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#1e40af" class="w-10 h-10">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 3h-15A1.5 1.5 0 003 4.5v15A1.5 1.5 0 004.5 21h7.5v-6a3 3 0 013-3h6v-7.5A1.5 1.5 0 0019.5 3z"/>
+            </svg>
+            <a href="/" class="text-2xl md:text-3xl font-bold text-gray-900" aria-label="ImageCompressor.live Home">ImageCompressor.live</a>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+            <a href="/" class="nav-link text-gray-700 hover:text-blue-600">Home</a>
+            <a href="/privacy.html" class="nav-link text-gray-700 hover:text-blue-600">Privacy</a>
+            <a href="/about.html" class="nav-link text-gray-700 hover:text-blue-600">About</a>
+            <a href="/blogs.html" class="nav-link active">Blogs</a>
+        </nav>
+    </header>
+
+    <!-- Back to Blog -->
+    <a href="/blogs.html" class="inline-block mb-6 text-blue-600 hover:underline font-medium">
+        ← Back to All Blogs
+    </a>
+
+    <!-- Article Header -->
+    <header class="mb-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Speed Up Your Site with Image Compression
+        </h1>
+        <p class="text-gray-600 text-lg">
+            Published on October 27, 2025 • 9 min read
+        </p>
+    </header>
+
+    <!-- Hero Image -->
+    <img 
+        src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        alt="Website speed optimization with image compression"
+        class="w-full rounded-2xl mb-8 shadow-lg object-cover"
+        loading="lazy"
+    >
+
+    <!-- Article Content -->
+    <article class="glass-card p-8 md:p-12 prose prose-lg max-w-none text-gray-700">
+        <p>
+            <strong>Images account for 60% of the average webpage weight</strong> — and they’re the #1 reason sites load slowly.
+        </p>
+        <p>
+            But here’s the truth: <strong>One properly compressed image can save 100ms of load time</strong>. Optimize 50 images? That’s <strong>5 seconds faster</strong> — enough to boost conversions by 7% and improve Google rankings.
+        </p>
+
+        <h2>How Images Slow Down Your Site</h2>
+        <p>Unoptimized images hurt performance in 4 ways:</p>
+        <ul>
+            <li><strong>Large file size</strong> → Slower download</li>
+            <li><strong>Blocking render</strong> → Delays First Contentful Paint</li>
+            <li><strong>High CPU usage</strong> → Slow decoding on mobile</li>
+            <li><strong>Mobile data drain</strong> → Users leave on 3G/4G</li>
+        </ul>
+
+        <h2>Core Web Vitals: The Metrics That Matter</h2>
+        <p>Google uses these to rank your site:</p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Good</th>
+                        <th>Needs Improvement</th>
+                        <th>Poor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>LCP</strong> (Largest Contentful Paint)</td>
+                        <td class="metric-good">&lt; 2.5s</td>
+                        <td>2.5–4s</td>
+                        <td class="metric-poor">&gt; 4s</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CLS</strong> (Cumulative Layout Shift)</td>
+                        <td class="metric-good">&lt; 0.1</td>
+                        <td>0.1–0.25</td>
+                        <td class="metric-poor">&gt; 0.25</td>
+                    </tr>
+                    <tr>
+                        <td><strong>FID</strong> (First Input Delay)</td>
+                        <td class="metric-good">&lt; 100ms</td>
+                        <td>100–300ms</td>
+                        <td class="metric-poor">&gt; 300ms</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p><strong>Images directly impact LCP and CLS</strong>. A 2MB hero image? That’s a 4.8s LCP on 3G.</p>
+
+        <!-- IMPROVED CHECKLIST -->
+        <h2 class="mb-8">6-Step Image Speed Optimization Checklist</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div class="glass-card p-6 flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                    <span class="text-xl font-bold text-red-600">1</span>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">Compress All Images</h3>
+                    <p class="text-gray-600 text-sm">Target: <strong>under 100KB</strong> per image</p>
+                </div>
+            </div>
+
+            <div class="glass-card p-6 flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4-4m0 0L8 8m4-4v12"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">Use WebP or AVIF</h3>
+                    <p class="text-gray-600 text-sm">30–50% smaller than JPG</p>
+                </div>
+            </div>
+
+            <div class="glass-card p-6 flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">Resize to Display Size</h3>
+                    <p class="text-gray-600 text-sm">Never serve 4000px on mobile</p>
+                </div>
+            </div>
+
+            <div class="glass-card p-6 flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                    <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">Lazy Load Below Fold</h3>
+                    <p class="text-gray-600 text-sm"><code class="bg-gray-100 px-1 rounded">loading="lazy"</code></p>
+                </div>
+            </div>
+
+            <div class="glass-card p-6 flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+                    <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0110.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 013-1.5"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">Serve from CDN</h3>
+                    <p class="text-gray-600 text-sm">Edge caching = faster delivery</p>
+                </div>
+            </div>
+
+            <div class="glass-card p-6 flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg text-gray-900 mb-1">Set Width/Height</h3>
+                    <p class="text-gray-600 text-sm">Prevents layout shifts (CLS)</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Case Study: E-commerce Site (Before vs After)</h2>
+        <div class="bg-gradient-to-br from-sky-50 to-blue-50 border border-sky-200 rounded-2xl p-6">
+            <div class="grid md:grid-cols-2 gap-6 text-center">
+                <div>
+                    <h3 class="font-bold text-lg mb-2">Before Optimization</h3>
+                    <p><strong>LCP:</strong> <span class="metric-poor">4.8s</span></p>
+                    <p><strong>Bounce Rate:</strong> 68%</p>
+                    <p><strong>Avg. Image Size:</strong> 1.4 MB</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-2 text-green-700">After Optimization</h3>
+                    <p><strong>LCP:</strong> <span class="metric-good">1.9s</span></p>
+                    <p><strong>Bounce Rate:</strong> 42% <span class="text-green-600">↓26%</span></p>
+                    <p><strong>Avg. Image Size:</strong> 180 KB</p>
+                </div>
+            </div>
+            <p class="text-sm text-center mt-4 text-gray-600">
+                <strong>Result:</strong> 38% increase in add-to-cart rate
+            </p>
+        </div>
+
+        <h2>Real Impact of One Optimized Image</h2>
+        <div class="before-after">
+            <div class="text-center">
+                <img src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Unoptimized 1.8 MB image" class="rounded-lg mb-2 shadow" loading="lazy">
+                <p class="font-semibold">Unoptimized: <span class="text-red-600">1.8 MB</span></p>
+                <p class="text-sm">Load time: ~3.6s on 3G</p>
+            </div>
+            <div class="text-center">
+                <img src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Optimized 168 KB image" class="rounded-lg mb-2 shadow" loading="lazy">
+                <p class="font-semibold text-green-600">Optimized: 168 KB</p>
+                <p class="text-sm">Load time: ~0.3s on 3G</p>
+            </div>
+        </div>
+
+        <h2>Best Tools for Speed Optimization</h2>
+        <ul>
+            <li><a href="/" class="text-blue-600 font-semibold hover:underline">ImageCompressor.live</a> → Bulk compress + WebP</li>
+            <li><strong>ImageOptim</strong> → Mac desktop app</li>
+            <li><strong>PageSpeed Insights</strong> → Free audit tool</li>
+            <li><strong>Cloudinary / Imgix</strong> → Auto-optimize CDN</li>
+        </ul>
+
+        <div class="bg-green-50 border border-green-200 rounded-2xl p-6 my-8">
+            <p class="font-semibold text-green-900">
+                Pro Tip: One compressed image = 100ms faster load. Optimize 30 images = 3 seconds faster site.
+            </p>
+        </div>
+
+        <h2>How to Implement Lazy Loading</h2>
+        <p>Add this to any image below the fold:</p>
+        <pre class="bg-gray-100 p-4 rounded-lg text-sm overflow-x-auto">
+&lt;img src="photo.jpg" loading="lazy" width="800" height="600" alt="description"&gt;</pre>
+
+        <h2>Conclusion: Speed Is Revenue</h2>
+        <p>
+            Every second of delay costs you users, rankings, and sales. But <strong>image compression is the easiest, highest-ROI fix</strong>.
+        </p>
+        <p>
+            Start today with <a href="/" class="text-blue-600 font-semibold hover:underline">ImageCompressor.live</a> — compress 100 images in under 60 seconds, for free, with zero quality loss.
+        </p>
+    </article>
+
+    <!-- CTA -->
+    <div class="mt-12 pt-8 border-t border-gray-200 text-center">
+        <a href="/" class="action-btn text-lg">
+            Try the #1 Free Compressor Now
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 border-t border-gray-200 mt-12">
+        <a href="/blogs.html" class="text-blue-600 hover:underline text-sm block mb-3">
+            ← Back to All Blog Posts
+        </a>
+        <p class="text-sm text-gray-600 mb-2">© 2025 ImageCompressor.live</p>
+        <nav class="md:hidden flex justify-center gap-6 text-sm">
+            <a href="/" class="text-gray-700 hover:text-blue-600">Home</a>
+            <a href="/privacy.html" class="text-gray-700 hover:text-blue-600">Privacy</a>
+            <a href="/about.html" class="text-gray-700 hover:text-blue-600">About</a>
+            <a href="/blogs.html" class="text-blue-600 font-medium">Blogs</a>
+        </nav>
+    </footer>
+</div>
+
+<!-- Scroll hint for tables -->
+<script>
+    document.querySelectorAll('.table-wrapper').forEach(wrapper => {
+        if (wrapper.scrollWidth > wrapper.clientWidth + 5) {
+            wrapper.style.border = '1px solid #e5e7eb';
+            wrapper.style.padding = '4px';
+            wrapper.style.borderRadius = '12px';
+        }
+    });
+</script>
+</body>
+</html>
